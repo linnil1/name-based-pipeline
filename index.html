@@ -1,0 +1,1594 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+    
+    
+      
+        <title>namepipe</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.4a0965b7.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="css/mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#name-based-pipeline" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="namepipe" class="md-header__button md-logo" aria-label="namepipe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            namepipe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Name-based Pipeline
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linnil1/name-based-pipeline" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="namepipe" class="md-nav__button md-logo" aria-label="namepipe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    namepipe
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linnil1/name-based-pipeline" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Name-based Pipeline
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Name-based Pipeline
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.error" class="md-nav__link">
+    namepipe.error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.error.NamePipeAssert" class="md-nav__link">
+    NamePipeAssert
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.error.NamePipeDataError" class="md-nav__link">
+    NamePipeDataError
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.error.NamePipeError" class="md-nav__link">
+    NamePipeError
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.error.NamePipeNotImplemented" class="md-nav__link">
+    NamePipeNotImplemented
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.path" class="md-nav__link">
+    namepipe.path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath" class="md-nav__link">
+    NamePath
+  </a>
+  
+    <nav class="md-nav" aria-label="NamePath">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.logger" class="md-nav__link">
+    logger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.suffix_key" class="md-nav__link">
+    suffix_key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.template" class="md-nav__link">
+    template
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.template_args" class="md-nav__link">
+    template_args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.template_kwargs" class="md-nav__link">
+    template_kwargs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.__add__" class="md-nav__link">
+    __add__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.__radd__" class="md-nav__link">
+    __radd__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.construct_name" class="md-nav__link">
+    construct_name()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.copy_others_template" class="md-nav__link">
+    copy_others_template()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.extract_fields" class="md-nav__link">
+    extract_fields()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.find_possible_files" class="md-nav__link">
+    find_possible_files()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.get_fields_name" class="md-nav__link">
+    get_fields_name()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.get_input_names" class="md-nav__link">
+    get_input_names()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.path.NamePath.replace_wildcard" class="md-nav__link">
+    replace_wildcard()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.task" class="md-nav__link">
+    namepipe.task
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask" class="md-nav__link">
+    NameTask
+  </a>
+  
+    <nav class="md-nav" aria-label="NameTask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.depended_pos" class="md-nav__link">
+    depended_pos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.func" class="md-nav__link">
+    func
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.func_args" class="md-nav__link">
+    func_args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.func_kwargs" class="md-nav__link">
+    func_kwargs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.input_name" class="md-nav__link">
+    input_name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.logger" class="md-nav__link">
+    logger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.output_name" class="md-nav__link">
+    output_name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.__repr__" class="md-nav__link">
+    __repr__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.__rrshift__" class="md-nav__link">
+    __rrshift__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.__rshift__" class="md-nav__link">
+    __rshift__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.__str__" class="md-nav__link">
+    __str__()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.copy" class="md-nav__link">
+    copy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.run" class="md-nav__link">
+    run()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.set_args" class="md-nav__link">
+    set_args()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namepipe.task.NameTask.set_depended" class="md-nav__link">
+    set_depended()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namepipe.task.nt" class="md-nav__link">
+    nt()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/linnil1/name-based-pipeline/edit/master/docs/README.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="name-based-pipeline">Name-based Pipeline</h1>
+<p>A pipeline doesn't depended on the file-extension (suffix) of filename.</p>
+<p>All input/output are the NAME, which is actually the filename without suffix</p>
+<p>The NAME can propagated (become longer name) as task executed on, it's very suitable for versioning and prevent overwritting</p>
+<p>The filename is read/created based on NAME, so the filenamew listed in directory can naively tell what pipeline has done</p>
+<p>More details are written in the document, check the link below.</p>
+<p>--</p>
+<p>The draft document in HackMD</p>
+<p>https://hackmd.io/ogyqCAUZQjaGuw1Mv5BGjw</p>
+<p>I'll copy it into readme and wiki page in the future</p>
+<p>Code document</p>
+<p>https://linnil1.github.io/name-based-pipeline</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+<a id="namepipe.error"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="namepipe.error.NamePipeAssert" class="doc doc-heading">
+        <code>NamePipeAssert</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="namepipe.error.NamePipeError" href="#namepipe.error.NamePipeError">NamePipeError</a></code></p>
+
+  
+      <p>Mostly this is internal error</p>
+
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="namepipe.error.NamePipeDataError" class="doc doc-heading">
+        <code>NamePipeDataError</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="namepipe.error.NamePipeError" href="#namepipe.error.NamePipeError">NamePipeError</a></code></p>
+
+
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="namepipe.error.NamePipeError" class="doc doc-heading">
+        <code>NamePipeError</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code>Exception</code></p>
+
+  
+      <p>Basic exception for namepipe module</p>
+
+
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="namepipe.error.NamePipeNotImplemented" class="doc doc-heading">
+        <code>NamePipeNotImplemented</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="namepipe.error.NamePipeError" href="#namepipe.error.NamePipeError">NamePipeError</a></code></p>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+<a id="namepipe.path"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="namepipe.path.NamePath" class="doc doc-heading">
+        <code>NamePath</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code>str</code></p>
+
+  
+      <p>NamePath is represented the NAME</p>
+<p>which is basically the input/output filename without suffix,
+but support wildcard (we use <code>{}</code> as wildcard).</p>
+<p>NamePath is inherited from str, so all str methods can works.</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.path.NamePath.logger" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.path.NamePath.suffix_key" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">suffix_key</span> <span class="o">=</span> <span class="s1">&#39;namepipe_catch_suffix&#39;</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.path.NamePath.template" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">template</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.path.NamePath.template_args" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">template_args</span> <span class="o">=</span> <span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.path.NamePath.template_kwargs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">template_kwargs</span> <span class="o">=</span> <span class="p">{}</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.__add__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__add__</span><span class="p">(</span><span class="n">others</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NamePath</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Adding suffix (Also in template)</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><span class="n">input_name</span> <span class="o">=</span> <span class="n">NamePath</span><span class="p">(</span><span class="s2">&quot;a.</span><span class="si">{}</span><span class="s2">.c&quot;</span><span class="p">)</span>
+<span class="n">output_name</span> <span class="o">=</span> <span class="n">input_name</span> <span class="o">+</span> <span class="s2">&quot;.d&quot;</span>  <span class="c1"># = a.{}.c.d</span>
+</code></pre></div>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>We use <code>template</code> and <code>template_args</code> to store the information
+before <code>construct_name()</code></p>
+<p>Note that <code>template_args</code> is empty after we init from a str.
+In most cases, it doesn't matter.</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <p>The relation of <code>self</code> <code>template</code> look like this
+<div class="highlight"><pre><span></span><code>self = &quot;a.00.b.{}.c&quot;
+template = &quot;a.{}.b.{}.c&quot;
+template_args = (&quot;00&quot;, &quot;{}&quot;)
+</code></pre></div></p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.__radd__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__radd__</span><span class="p">(</span><span class="n">others</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NamePath</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Adding prefix (Almost same as <code>__add__</code>)</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.construct_name" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">construct_name</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">kwargs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">NamePath</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Fill the replacement field in name string with <code>*arg</code> or <code>**kwargs</code>.</p>
+<p>This function will integrate with template, template_args.</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <p>Input data:
+<div class="highlight"><pre><span></span><code><span class="bp">self</span> <span class="o">=</span> <span class="s2">&quot;a.1.b.</span><span class="si">{}</span><span class="s2">.c&quot;</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;a.</span><span class="si">{}</span><span class="s2">.b.</span><span class="si">{}</span><span class="s2">.c&quot;</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">template_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">]</span>
+<span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Q&quot;</span><span class="p">]</span>  <span class="c1"># from extract_fields()</span>
+</code></pre></div></p>
+<p>It will merge self.template_args and args
+<div class="highlight"><pre><span></span><code><span class="bp">self</span> <span class="o">=</span> <span class="s2">&quot;a.1.b.Q.c&quot;</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;a.</span><span class="si">{}</span><span class="s2">.b.</span><span class="si">{}</span><span class="s2">.c&quot;</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">template_args</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;Q&quot;</span><span class="p">]</span>
+</code></pre></div></p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.copy_others_template" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">copy_others_template</span><span class="p">(</span><span class="n">others</span><span class="p">:</span> <span class="n">NamePath</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Deep copy the template from another NamePath</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.extract_fields" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_fields</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">parse</span><span class="o">.</span><span class="n">Result</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extract the value of replacement fields from the name</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><span class="bp">self</span> <span class="o">=</span> <span class="s2">&quot;./data/xxx.</span><span class="si">{}</span><span class="s2">.oo.</span><span class="si">{}</span><span class="s2">.mapped&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;./data/xxx.00.oo.a.mapped.bam&quot;</span>
+<span class="k">return</span> <span class="o">=</span> <span class="n">Result</span><span class="o">.</span><span class="n">fixed</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;00&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Note that the fields are extract from name string,
+NOT from template
+<div class="highlight"><pre><span></span><code><span class="bp">self</span> <span class="o">=</span> <span class="s2">&quot;./data/xxx.00.oo.</span><span class="si">{}</span><span class="s2">.mapped&quot;</span>
+<span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;./data/xxx.</span><span class="si">{}</span><span class="s2">.oo.</span><span class="si">{}</span><span class="s2">.mapped&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;./data/xxx.00.oo.a.mapped.bam&quot;</span>
+<span class="k">return</span> <span class="o">=</span> <span class="n">Result</span><span class="o">.</span><span class="n">fixed</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,)</span>
+</code></pre></div></p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.find_possible_files" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">find_possible_files</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>List all possible files
+by replacing any replacement fields into <code>*</code></p>
+<p>But the built-in <code>*</code> matchs not only single word,
+it can capture multiple words like <code>xxx.ooo</code> in one <code>*</code></p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.get_fields_name" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_fields_name</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Extract all replacement fields from string</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.get_input_names" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_input_names</span><span class="p">(</span><span class="n">depended_pos</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">NamePath</span><span class="p">]</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>list all names that fit the format</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code>self = &quot;./data/xxx.{}.oo.{}.mapped&quot;
+return [&quot;./data/xxx.00.oo.a.mapped&quot;,
+        &quot;./data/xxx.00.oo.b.mapped&quot;,
+        &quot;./data/xxx.01.oo.a.mapped&quot;,
+        &quot;./data/xxx.01.oo.b.mapped&quot;]
+</code></pre></div>
+<p>With depended_pos
+<div class="highlight"><pre><span></span><code>self = &quot;./data/xxx.{}.oo.{}.mapped&quot;
+depended_pos = [-1]  # the last fields
+return [&quot;./data/xxx.00.oo.{}.mapped&quot;,
+        &quot;./data/xxx.01.oo.{}.mapped&quot;]
+</code></pre></div></p>
+</details>
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>depended_pos</code></td>
+          <td>
+                <code>list[str | int]</code>
+          </td>
+          <td><p>The position that doesn't treat them as independed fields</p></td>
+          <td>
+                <code>[]</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.path.NamePath.replace_wildcard" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">replace_wildcard</span><span class="p">(</span><span class="n">merge_text</span> <span class="o">=</span> <span class="s1">&#39;_merge&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NamePath</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A function that simply <code>self.replace(".{}", merge_text)</code></p>
+<p>But it takes care about escaped string and template</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">input_name</span><span class="p">)</span>  <span class="c1"># &quot;a.00.c.{}&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">input_name</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>  <span class="c1"># &quot;a.{}.c.{}&quot;</span>
+<span class="n">output_name</span> <span class="o">=</span> <span class="n">input_name</span><span class="o">.</span><span class="n">replace_wildcard</span><span class="p">(</span><span class="s2">&quot;_merge&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output_name</span><span class="p">)</span>  <span class="c1"># &quot;a.00.c_merge&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output_name</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>  <span class="c1"># &quot;a.{}.c_merge&quot;</span>
+</code></pre></div>
+</details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+<a id="namepipe.task"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="namepipe.task.NameTask" class="doc doc-heading">
+        <code>NameTask</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Task class that interact with NamePath</p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.task.NameTask.depended_pos" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">depended_pos</span> <span class="o">=</span> <span class="p">[]</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.task.NameTask.func" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">func</span> <span class="o">=</span> <span class="n">func</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.task.NameTask.func_args" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">func_args</span> <span class="o">=</span> <span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.task.NameTask.func_kwargs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">func_kwargs</span> <span class="o">=</span> <span class="p">{}</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.task.NameTask.input_name" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">input_name</span> <span class="o">=</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.task.NameTask.logger" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="namepipe.task.NameTask.output_name" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">output_name</span> <span class="o">=</span> <span class="kc">None</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">func</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.__repr__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__repr__</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.__rrshift__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__rrshift__</span><span class="p">(</span><span class="n">others</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NameTask</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.__rshift__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__rshift__</span><span class="p">(</span><span class="n">others</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NameTask</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.__str__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__str__</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.copy" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">copy</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">NameTask</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Deep copy the instance</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.run" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="n">input_name</span><span class="p">:</span> <span class="n">NamePath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NameTask</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Main function to excute the function</p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.set_args" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NameTask</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set arguments for main function</p>
+<p>I recommand the write args in the output_name
+(make suffix longer, but clear)</p>
+<p>Note that it will return a new instance because
+this task may be used mutliple times in the same pipeline
+which may apply different arguments.</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><span class="nd">@nt</span>
+<span class="k">def</span> <span class="nf">func_need_args</span><span class="p">(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+    <span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cat </span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2">.txt &gt; </span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2">.add_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;echo </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> &gt;&gt; </span><span class="si">{</span><span class="n">input_name</span><span class="si">}</span><span class="s2">.add_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">.txt&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">input_name</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;.add_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2">&quot;./test.</span><span class="si">{}</span><span class="s2">&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">func_need_args</span><span class="o">.</span><span class="n">set_args</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;indexname&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="return">
+  <summary>Return</summary>
+  <p>A new NameTask</p>
+</details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="namepipe.task.NameTask.set_depended" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">set_depended</span><span class="p">(</span><span class="n">pos</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">NameTask</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set depended fields (see NamePath.get_input_names)</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><span class="nd">@nt</span>
+<span class="k">def</span> <span class="nf">func_merge_samples</span><span class="p">(</span><span class="n">input_name</span><span class="p">):</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">input_name</span><span class="o">.</span><span class="n">get_input_names</span><span class="p">()]</span>
+    <span class="k">return</span> <span class="n">input_name</span><span class="o">.</span><span class="n">replace_wildcard</span><span class="p">(</span><span class="s2">&quot;_merge&quot;</span><span class="p">)</span>
+
+<span class="s2">&quot;./test.</span><span class="si">{}</span><span class="s2">&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">func_merge_samples</span><span class="o">.</span><span class="n">set_depended</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<details class="return">
+  <summary>Return</summary>
+  <p>A new NameTask</p>
+</details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="namepipe.task.nt" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">nt</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>A decorator to create a NameTask() instance</p>
+
+<details class="example">
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">namepipe</span> <span class="kn">import</span> <span class="n">nt</span>
+
+<span class="nd">@nt</span>
+<span class="k">def</span> <span class="nf">doSomething</span><span class="p">(</span><span class="n">input_name</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">input_name</span> <span class="o">+</span> <span class="s2">&quot;.test&quot;</span>
+
+<span class="s2">&quot;&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">doSomething</span>
+</code></pre></div>
+</details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["toc.integrate"], "search": "assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.a877e258.min.js"></script>
+      
+    
+  </body>
+</html>
